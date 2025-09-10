@@ -23,7 +23,7 @@ def run_all_tests():
 
     print("\n=== 3. Test create file , cat ===")
     notes = File("notes.txt", ["Hello", "World"])
-    secret = File("secret.txt", ["Top Secret"], is_protected=True, password="1234")
+    secret = File("secret.txt", ["Top Secret"], is_protected=True, password="1234") # This is Password
     os.root.add_child(notes)
     os.root.add_child(secret)
     print("Notes content:\n", os.cat("notes.txt"))
