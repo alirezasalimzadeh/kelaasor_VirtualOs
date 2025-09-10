@@ -13,7 +13,7 @@ Think of it as your own **mini OS** without touching the real disk.
 
 
 ## 🛠 How It Works
-- 🧠 All files and folders exist **in memory** as Python objects — nothing touches your real disk unless you choose to save.
+- 🧠 All files and folders exist **in memory** as Python objects .
 - 📍 Supports both **absolute paths** (`root/...`) and **relative paths** (`./`, `../`) for navigation.
 - 🔐 Files can be **password-protected**, blocking read or edit access without the correct key.
 - 💾 The entire virtual file system can be **saved** to a binary file and **restored** later using Python’s `pickle` module.
