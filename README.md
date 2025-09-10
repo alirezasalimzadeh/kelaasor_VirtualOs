@@ -11,5 +11,32 @@ Think of it as your own **mini OS** without touching the real disk.
 - 🔍 Search by name or extension
 - 💾 Save & load the entire system state
 
+
+## 🛠 How It Works
+- 🧠 All files and folders exist **in memory** as Python objects — nothing touches your real disk unless you choose to save.
+- 📍 Supports both **absolute paths** (`root/...`) and **relative paths** (`./`, `../`) for navigation.
+- 🔐 Files can be **password-protected**, blocking read or edit access without the correct key.
+- 💾 The entire virtual file system can be **saved** to a binary file and **restored** later using Python’s `pickle` module.
+
+
 ## 🚀 Quick Start
 ```python
+from virtualos import VirtualOS
+
+# Initialize the virtual OS
+os = VirtualOS()
+
+# Create and navigate into a folder
+os.mkdir("projects")
+os.cd("projects")
+
+# Create a file and write content
+from file import File
+myfile = File("notes.txt", ["Hello World"])
+os.current_folder.add_child(myfile)
+
+# List current folder contents
+print(os.ls())  # ['notes.txt']
+
+# Read file content
+print(os.cat("notes.txt"))
